@@ -1,0 +1,16 @@
+paths:
+  raw_data: data/raw/raw_transactions.csv
+  processed_dir: data/processed
+  splits_dir: data/splits
+  pipeline_artifact: data/processed/fraud_pipeline.joblib
+
+target_column: is_fraud
+random_state: 42
+
+split:
+  train_size: 0.70
+  val_size: 0.15
+  test_size: 0.15
+
+leakage:
+  correlation_threshold: 0.8
