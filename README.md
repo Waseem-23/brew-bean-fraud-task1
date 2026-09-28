@@ -66,6 +66,14 @@ Everything is set in `config/config.yaml`; no paths are hard-coded.
 
 ## How to rerun
 
+The raw data is not committed. Generate it first with:
+
+```
+python -m src.data.generate_sample_data
+```
+
+Then run the pipeline and the tests:
+
 ```
 pip install -r requirements.txt
 python -m src.data_pipeline

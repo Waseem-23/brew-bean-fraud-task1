@@ -46,7 +46,14 @@ df = pd.DataFrame({
     "is_fraud": is_fraud,
 })
 
-output_path = Path(__file__).parent / "raw_transactions.csv"
+import yaml
+
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
+with open(PROJECT_ROOT / "config" / "config.yaml") as f:
+    cfg = yaml.safe_load(f)
+
+output_path = PROJECT_ROOT / cfg["paths"]["raw_data"]
+output_path.parent.mkdir(parents=True, exist_ok=True)
 df.to_csv(output_path, index=False)
 
 print("Rows:", len(df))
