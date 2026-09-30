@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from src.data_pipeline import (
+from src.data.data_pipeline import (
     PII_COLUMNS, add_customer_velocity, build_pipeline, clean_data, remove_pii,
 )
 from src.features.transformers import (
